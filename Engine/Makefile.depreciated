@@ -1,0 +1,33 @@
+CC 			= g++
+CFLAGS 		= -Wall -O2 -g -g3 -I./include
+LDFLAGS 	= -framework OpenGL -framework GLUT -framework libpng -framework SDL -framework Cocoa -lSDLmain -llua -ltoLua++
+
+SOURCE 		= source
+OBJECT 		= build
+
+CXXFILES 	= $(foreach dir,$(SOURCE),$(notdir $(wildcard $(dir)/*.cpp)))
+OFILES 		= $(CXXFILES:.cpp=.o) 
+
+SOURCES 	= $(addprefix $(SOURCE)/, $(CXXFILES))
+OBJECTS 	= $(addprefix $(OBJECT)/, $(OFILES))
+
+EXECUTABLE 	= Engine
+
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+	
+$(OBJECT)/%.o: $(SOURCE)/%.cpp
+	$(CC) -c $< -o $@ $(CFLAGS)
+	
+clean:
+	@rm -rf $(OBJECT)/*.o $(EXECUTABLE) $(EXECUTABLE).app
+	
+app:
+	@mkdir -p $(EXECUTABLE).app/
+	@mkdir -p $(EXECUTABLE).app/Contents/
+	@mkdir -p $(EXECUTABLE).app/Contents/MacOS/
+	@cp -r ../.app/* $(EXECUTABLE).app/Contents/
+	@cp -r Engine $(EXECUTABLE).app/Contents/MacOS/
+	

@@ -1,0 +1,35 @@
+$#include "Entity.h"
+$#include "Player.h"
+$#include "Window.h"
+
+class Entity
+{
+	Entity();
+	~Entity();
+	
+	int addEntity(const char *sprite_name);
+	void setPosition(int index, int x, int y);
+	void setFacing(int index, int direction);
+	void moveTo(int index, int x, int y);
+	void faceEntity(int index, int index_to);
+};
+
+class Player
+{
+	Player();
+	~Player();
+	
+	int addPlayer(const char *sprite_name);
+};
+
+class Window
+{
+	Window();
+	~Window();
+	
+	int addWindow();
+	void setMessage(int index, const char *message);
+	void setSize(int index, int x, int y);
+	void setPosition(int index, int w, int h);
+	void removeWindow(int index);
+};
