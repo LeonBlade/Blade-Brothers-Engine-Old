@@ -2,10 +2,9 @@ TODO
 ====
 Engine
 ------
-+ Add coroutines in Lua.
-+ Create overloaded functions for lua calls instead of passing the raw functions.
++ Add Lua back in the Engine
++ Transfer DialogSystem and Dialog into the Engine
 
 Toolkit
 -------
-+ Problems with the way the tilesets render in the view, SERIOUS bug and I'm not sure what it is entirely.
 + Add NPCs and other Entities in the Toolkit

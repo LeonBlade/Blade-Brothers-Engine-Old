@@ -8,7 +8,7 @@
  */
 
 #include <SDL/SDL.h>
-#include "Game.h"
+#include "core/Game.h"
 
 int main(int argc, char *argv[])
 {
