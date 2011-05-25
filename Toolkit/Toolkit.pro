@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2011-05-10T05:15:46
+# Project created by QtCreator 2011-05-25T07:37:49
 #
 #-------------------------------------------------
 
@@ -9,19 +9,16 @@ QT       += core gui opengl
 TARGET = Toolkit
 TEMPLATE = app
 
-LIBS += -framework OpenGL
+INCLUDEPATH += ../Engine/inclue
 
+LIBS += -framework libpng -framework SDL -lSDLmain -framework Cocoa -L../Engine/Debug/source/ -lgraphics/Sprite.o -lcore/Map.o -lcore/Vector2.o
 
 SOURCES += main.cpp\
-        toolkitwindow.cpp \
-    mapwidget.cpp
+        mainwindow.cpp
 
-HEADERS  += toolkitwindow.h \
-    mapwidget.h
+HEADERS  += mainwindow.h
 
-INCLUDEPATH += ../Engine/include
-
-FORMS    += toolkitwindow.ui
+FORMS    += mainwindow.ui
 
 RESOURCES += \
-    ../resources/BBEToolkitResources.qrc
+    ../resources/resources.qrc

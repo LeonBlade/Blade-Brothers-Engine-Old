@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/icons/toolkit">
+        <file>icons/toolkit/filenew.png</file>
+        <file>icons/toolkit/fileopen.png</file>
+        <file>icons/toolkit/filesave.png</file>
+        <file>icons/toolkit/filesaveas.png</file>
+        <file>icons/toolkit/stock_preferences.png</file>
+        <file>icons/toolkit/stock_run.png</file>
+    </qresource>
+</RCC>
