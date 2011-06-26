@@ -34,9 +34,7 @@ public:
 	enum TileType
 	{
 		Normal = 0,
-		Wall = 1,
-		AutoTile = 2,
-		Object = 3
+		Object = 1
 	};
 
 	enum Layer
@@ -44,7 +42,6 @@ public:
 		Ground = 0,
 		Middle = 1,
 		Top = 2,
-		Collision = 3
 	};
 
 	struct MapHeader
@@ -67,7 +64,8 @@ public:
 
 	struct MapData
 	{
-	    MapTile tile[4];
+	    MapTile tile[3];
+	    int collision;
 	};
 
 public:
@@ -81,6 +79,8 @@ public:
 	// getters and setters so we can quit being non-OOP
 	Map::MapTile getTile(int xTile, int yTile, Layer layer);
 	void setTile(int xTile, int yTile, Layer layer, TileType type, int tileValue);
+	int getCollision(int xTile, int yTile);
+	void setCollision(int xTile, int yTile, int value);
 	int getTilesX();
 	int getTilesY();
 	int getStartX();
@@ -93,7 +93,7 @@ public:
 	void setTileset(const char *tileset);
 
 private:
-	SpriteTexture groundTexture, wallTexture, autoTexture, objectTexture;
+	SpriteTexture normalTexture, objectTexture;
 	MapData* mapData;
 	MapHeader mapHeader;
 	unsigned int magic;

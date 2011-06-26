@@ -97,11 +97,14 @@ bool Game::OnInit()
 	Entity::EntityStack.push_back(&player);
 
 	// Load map
-	if (map.OnLoad("../resources/maps/testmap.map") == false)
+	/*
+	if (map.OnLoad("../resources/maps/autotest.map") == false)
 	{
 		printf("Loading map failed.\n");
 		return false;
 	}
+	*/
+	map.OnCreate(30, 25);
 	Map::MapStack.push_back(&map);
 
 	player.setPosition(map.getStartX(), map.getStartY());
@@ -150,6 +153,16 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 {
 	if (sym == SDLK_ESCAPE)
 		StillBreathing = false;
+	else if (sym == SDLK_SPACE)
+	{
+		Map::MapTile tile = map.getTile(player.getTilePosition().x, player.getTilePosition().y, Map::Ground);
+		map.setTile(player.getTilePosition().x, player.getTilePosition().y, Map::Top, Map::Object, 17);
+		map.setTile(player.getTilePosition().x, player.getTilePosition().y-1, Map::Top, Map::Object, 1);
+	}
+	else if (sym == SDLK_s)
+	{
+		map.OnSave("../resources/maps/autotest.map");
+	}
 
 	player.handleKeyboard(sym, true);
 }

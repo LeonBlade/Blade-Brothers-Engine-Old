@@ -168,5 +168,26 @@ bool Sprite::OnDraw(SpriteTexture texture, Vector2 position, SDL_Rect tile, Vect
 	}
 	glEnd();
 
+	glBindTexture(GL_TEXTURE_2D, NULL);
+
+	// draw outline
+	/*
+	glBegin(GL_LINES);
+	{
+		glVertex2i(position.x, position.y);
+		glVertex2i(position.x + tile.w + size.x, position.y);
+
+		glVertex2i(position.x + tile.w + size.x, position.y);
+		glVertex2i(position.x + tile.w + size.x, position.y + tile.h + size.y);
+
+		glVertex2i(position.x + tile.w + size.x, position.y + tile.h + size.y);
+		glVertex2i(position.x, position.y + tile.h + size.y);
+
+		glVertex2i(position.x, position.y + tile.h + size.y);
+		glVertex2i(position.x, position.y);
+	}
+	glEnd();
+	*/
+
 	return true;
 }

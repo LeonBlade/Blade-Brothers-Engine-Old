@@ -24,8 +24,7 @@ so you'll need to fix anything like that on your own.
 
 But... what if I have any questions?
 ------------------------------------
-By all means, contact me!  I'll be posting a current TODO list so that you can view
-what's going on, and if you want to contribute, by all means go ahead.  :)
+By all means, contact me!
 
 Is that all then?
 -----------------

@@ -284,8 +284,7 @@ bool Entity::positionValid(Vector2 newPosition)
 	bool Return = true;
 
 	Map *map = Map::MapStack[0];
-	Map::MapTile tile = map->getTile(newPosition.x, newPosition.y, Map::Collision);
-	if (tile.data)
+	if (map->getCollision(newPosition.x, newPosition.y) == 1)
 		Return = false;
 
 	for (uint i = 0; i < EntityStack.size(); i++)

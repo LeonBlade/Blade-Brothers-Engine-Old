@@ -10,16 +10,10 @@
 #ifndef _SPRITE_H_
 #define _SPRITE_H_
 
-#define TILE_SIZE 32
-#define TILESET_SIZE 256
+#define TILE_SIZE 16
 
-#ifdef TOOLKIT
-    #include <qgl.h>
-#else
-    //#include <GL/gl.h>
-    //#include <GL/glu.h>
-    #include <OpenGL/OpenGL.h>
-#endif
+#include <gl.h>
+#include <glu.h>
 
 #include <SDL/SDL.h>
 #include <libpng/png.h>
